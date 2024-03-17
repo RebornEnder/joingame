@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roblox Game Redirector</title>
+    <script type="text/javascript">
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const gameId = urlParams.get('placeid');
+
+            if (gameId) {
+                const robloxUrl = `roblox://placeID=${gameId}`;
+                window.location.href = robloxUrl;
+            } else {
+                document.body.innerHTML = '<p>Please provide a game ID in the URL.</p>';
+            }
+        };
+    </script>
+</head>
+<body>
+    <p>Joining Game... If roblox doesn't open, ensure you have provided a correct game ID.</p>
+</body>
+</html>
